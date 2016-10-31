@@ -34,13 +34,8 @@ for i in soupMain.select('.cursList'):
         generalInfo = soup.find('meta', attrs={'property': 'og:description'})
         listGeneralInfo.append(generalInfo['content'].strip())
 
-        regex = r"([a-zA-Z]+) (\d+)"
-        matches = re.findall(regex, "[^abc]")
-        for match in matches:
-            print "Full match: %s" % (match)
-        print matches
-        # print match
-
+        #next step: search for the address inside the list listaGeneralInfo
+        
         test = zip(listNames, listGeneralInfo)
 
-# exportData = pyexcel.save_as(array = test, dest_file_name = "teste.csv")
+exportData = pyexcel.save_as(array = test, dest_file_name = "teste.csv")
